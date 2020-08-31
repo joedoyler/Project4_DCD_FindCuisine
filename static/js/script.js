@@ -5,6 +5,8 @@
   
     $('.tooltipped').tooltip();
 
+    $("select").formSelect();
+
     $('.tap-target').tapTarget();
 
   });
