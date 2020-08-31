@@ -21,12 +21,14 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
+        
 
 
         {% if session.user %}
+        <li><a href="{{ url_for('add_recipes') }}">Add Recipes</a></li>
         <li><a href="{{ url_for('profile', username=session['user']) }}"> <i class="far fa-user-circle"></i> </a></li>
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-       
+        
         
         {% else %}
         <li><a href="{{ url_for('login') }}"> Log In </a></li>
