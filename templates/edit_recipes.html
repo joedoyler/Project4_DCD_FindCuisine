@@ -3,7 +3,7 @@
 
  <h3 class="light-blue-text text-darken-4 center-align">Edit Recipe</h3>
 
-
+<!-- Form for editing recipes post being added to recipes directory -->
     <div class="row card-panel grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('add_recipes', recipe_id=recipe._id) }}">
             <!-- category selection -->
@@ -73,6 +73,7 @@
                                 <input type="checkbox" id="recipe_allergy" name="recipe_allergy">
                             {% endif %}
                             <span class="lever"></span>
+						</label>
 					</div>
 				</div>
             </div>

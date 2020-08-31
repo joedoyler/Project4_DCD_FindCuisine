@@ -19,11 +19,15 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 # recipes page displaying recipes
+
+
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
+
+# main home page
 
 
 @app.route("/index")
@@ -32,6 +36,8 @@ def index():
 
 
 # register page with form
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -54,6 +60,8 @@ def register():
                             "profile", username=session["user"]))
 
     return render_template("register.html")
+
+# log in features
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -86,6 +94,8 @@ def login():
 
     return render_template("login.html")
 
+# display for users username on profile page
+
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
@@ -98,13 +108,18 @@ def profile(username):
 
     return redirect(url_for("login"))
 
+# log out feature allowing users to log out of their profiles
+
 
 @app.route("/logout")
 def logout():
-    # remove user from session cookies
+    # pop feature clears user cookies to log them out
     flash("Have A Food Filled Day!")
     session.pop("user")
     return redirect(url_for("login"))
+
+# add recipe feature. Sets up variable to collect
+#  different bits of recipe info from database
 
 
 @app.route("/add_recipes", methods=["GET", "POST"])
@@ -128,7 +143,7 @@ def add_recipes():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipes.html", categories=categories)
 
-
+# allows user to edit their recipes after already adding them from the recipes page
 @app.route("/edit_recipes/<recipe_id>", methods=["GET", "POST"])
 def edit_recipes(recipe_id):
     if request.method == "POST":
@@ -151,7 +166,7 @@ def edit_recipes(recipe_id):
     return render_template(
         "edit_recipes.html", recipe=recipe, categories=categories)
 
-
+# users can delete recipes from recipes directory page
 @app.route("/delete_recipes/<recipe_id>")
 def delete_recipes(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})

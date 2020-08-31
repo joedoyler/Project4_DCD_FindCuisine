@@ -17,7 +17,7 @@
 <header> 
  <nav>
     <div class="nav-wrapper black">
-      <a href="#!" class="brand-logo "> Find Cuisine <i class="fas fa-wine-glass-alt red darken-4"></i></a>
+      <a href="{{ url_for('index') }}" class="brand-logo "> Find Cuisine <i class="fas fa-wine-glass-alt red darken-4"></i></a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{{ url_for('index') }}">Home</a></li>
@@ -51,7 +51,7 @@
   </ul>
 </header> 
 
-<!-- -->
+
 <section>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
@@ -65,7 +65,7 @@
         {% endwith %}
     </section>
 
-
+<!-- block where all unique content to other pages goes -->
     {% block content %}
 
 

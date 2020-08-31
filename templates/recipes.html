@@ -17,6 +17,7 @@
                 </div>
         <i class="far fa-list-alt"></i>
         <b> {{recipe.recipe_name}} </b>
+        <!-- exclamation pops up next to recipe name when allergy set to on -->
         {% if recipe.recipe_allergy == "on" %}
         <i class="fas fa-exclamation-circle tooltipped"
             data-position="right" data-tooltip="Contains Allergens Highlighted In Description">
