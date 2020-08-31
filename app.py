@@ -143,7 +143,11 @@ def add_recipes():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipes.html", categories=categories)
 
-# allows user to edit their recipes after already adding them from the recipes page
+
+# allows user to edit their recipes
+# after already adding them from the recipes page
+
+
 @app.route("/edit_recipes/<recipe_id>", methods=["GET", "POST"])
 def edit_recipes(recipe_id):
     if request.method == "POST":
@@ -166,7 +170,9 @@ def edit_recipes(recipe_id):
     return render_template(
         "edit_recipes.html", recipe=recipe, categories=categories)
 
+
 # users can delete recipes from recipes directory page
+
 @app.route("/delete_recipes/<recipe_id>")
 def delete_recipes(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
