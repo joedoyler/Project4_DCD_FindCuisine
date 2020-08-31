@@ -4,4 +4,10 @@
     $('.collapsible').collapsible();
   
     $('.tooltipped').tooltip();
+
+    $('.tap-target').tapTarget();
+
   });
+
+  
+    
