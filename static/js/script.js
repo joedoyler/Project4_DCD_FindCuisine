@@ -7,9 +7,10 @@
 
     $("select").formSelect();
 
-    $('.tap-target').tapTarget();
 
   });
+
+
 
   
     

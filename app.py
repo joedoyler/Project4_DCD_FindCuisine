@@ -26,6 +26,11 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
+@app.route("/index")
+def index():
+    return render_template("index.html")
+
+
 # register page with form
 @app.route("/register", methods=["GET", "POST"])
 def register():
