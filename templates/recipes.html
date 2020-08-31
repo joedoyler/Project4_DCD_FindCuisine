@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!-- title of All recipes page -->
 <h3 class="red center-align">All Recipes</h3>
 
+<!-- directory of all newly made recipes with click -->
 <ul class="collapsible popout">
     {% for recipe in recipes %}
 	<li>
@@ -26,24 +27,23 @@
 
 		<div class="collapsible-body">
 		<div class="row">
-			<div class="col s8 push-s4">
+        <div class="col-xl-4 col-md-12 center-align"> <span> 
+            <img src="{{recipe.recipe_image}}" width="200" height="200">
+            
+            </span>
+            </div>
+			<div class="col-xl-8 col-md-12">
 				<span class="flow-text">
-                <h3 class="red darken-4"> Ingredients </h3>
+                <h5 class="red darken-4"> Ingredients </h5>
                 {{recipe.recipe_ingredients}}
-                <h3 class="red darken-4"> Ingredients </h3>
+                <h5 class="red darken-4"> Prep Time </h5>
                 {{recipe.recipe_time}}
-        
-                {{recipe.recipe_image}}
-                <h3 class="red darken-4"> Ingredients </h3>
+                <h5 class="red darken-4"> Description </h5>
                 {{recipe.recipe_description}}
                 <p><em>by: {{ recipe.created_by }}</em></p>
                 </span></div>
 
-			<div class="col s4 pull-s8"><span class="flow-text">
-            {{recipe.recipe_image}}
-            
-            
-            </span></div>
+			
 		</div>
         </div>
 	</li>

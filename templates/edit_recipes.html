@@ -47,8 +47,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-list-ul prefix light-blue-text text-darken-4"></i>
-                     <input id="recipe_ingredients" name="recipe_ingredients" minlength="5" maxlength="50"
-                        value="{{ recipe.recipe_ingredients }}" type="text" class="validate" required>
+                     <input id="recipe_ingredients" name="recipe_ingredients" minlength="1" maxlength="200"
+                        value="{{ recipe.recipe_ingredients }}" type="text" class="materialize-textarea validate" required>
                     <label for="recipe_ingredients">Recipe Ingredients</label>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-stopwatch prefix light-blue-text text-darken-4"></i>
                      <input id="recipe_time" name="recipe_time" minlength="1" maxlength="50"
-                        value="{{ recipe.recipe_time }}" type="text" class="validate" required>
+                        value="{{ recipe.recipe_time }}" type="text" class="materialize-textarea validate" required>
                     <label for="recipe_time">Recipe Prep Time</label>
                 </div>
             </div>
@@ -80,7 +80,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-image prefix light-blue-text text-darken-4"></i>
-                    <input id="recipe_image" name="recipe_image" minlength="5" maxlength="50"
+                    <input id="recipe_image" name="recipe_image"
                         value="{{ recipe.recipe_image }}" type="text" class="validate" required>
                     <label for="recipe_image">Link To Image</label>
                 </div>

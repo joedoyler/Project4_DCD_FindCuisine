@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" type="text/css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <!-- Unique stylesheet styleIndex only attributed to the index page -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styleIndex.css') }}" type="text/css">
     <title>Find Cuisine Recipes Website</title>
 </head>
@@ -43,18 +44,21 @@
   </ul>
 </header> 
 <section>
-
+<!-- On main front page side bar section outlining welcome message and instructions on how to use website -->
 <div class="sidePanel center-align">
        <h3>Welcome To Find Cuisine! </h3>
-       <h5> <italic> Find Cuisine is a directory of recipes made by its users, for its users.
+       <h5> <b> Find Cuisine is a directory of recipes made by its users, for its users.
             Come and join your fellow foodies by clicking the register button on the top right of the screen.
             We encourage users to share practical recipes that they would expect to get at a restaurant for that <italic> Fine Cuisine </italic>
-            experience!</italic>
+            experience!</b>
        </h5>
        <h6>Only you can edit and delete your recipes so no need to worry about them going missing!
            To edit your 
        </h6>
-
+       <br>
+       <h6>
+       Users will only be able to make recipes once they have registered and created a profile
+       </h6>
 
 </div>
 

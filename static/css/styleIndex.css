@@ -1,3 +1,4 @@
+/*-- Outlining index page font  --*/
 body {
     font-family: latha;
     color:#9e9e9e ;
@@ -7,6 +8,7 @@ body {
     height:auto;
 }
 
+/*-- Styling For black opaque panel containing welcome message text on index page --*/
 .sidePanel {
     width: 450px;
     height: 100%;
@@ -14,7 +16,11 @@ body {
     color: white;
     opacity: 0.8;
     padding: 25px;
-    margin-left: 35px;
+    margin-left: 23px;
     font-size: 25%;
+}
+
+.sidePanel h6 {
+    color: red;
 }
 
