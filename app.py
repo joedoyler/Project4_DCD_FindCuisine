@@ -112,6 +112,7 @@ def add_recipes():
             "recipe_description": request.form.get("recipe_description"),
             "recipe_allergy": recipe_allergy,
             "due_date": request.form.get("due_date"),
+            "recipe_image": request.form.get("recipe_image"),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)

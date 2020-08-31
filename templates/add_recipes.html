@@ -34,13 +34,13 @@
                     <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
                     <textarea id="recipe_description" name="recipe_description" minlength="5"
                         maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="recipe_description">Recipe Description</label>
+                    <label for="recipe_description">Recipe Description - Highlight allergens at bottom of description</label>
                 </div>
             </div>
             <!-- recipe ingredients-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-list-ul prefix light-blue-text text-darken-4"></i>
                     <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="5"
                         maxlength="200" class="materialize-textarea validate" required></textarea>
                     <label for="recipe_ingredients">Recipe Ingredients</label>
@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-stopwatch prefix light-blue-text text-darken-4"></i>
-                    <input id="recipe_time" name="recipe_time" minlength="5" maxlength="50"
+                    <input id="recipe_time" name="recipe_time" minlength="1" maxlength="50"
                         type="text" class="validate" required>
                     <label for="recipe_time">Prep Time</label>
                 </div>
@@ -68,6 +68,15 @@
 					</div>
 				</div>
             </div>
+            <!-- recipe link -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-image prefix light-blue-text text-darken-4"></i>
+                    <input id="recipe_image" name="recipe_image"
+                        type="text" class="validate" required>
+                    <label for="recipe_image">Link To Image Of Recipe </label>
+                </div>
+            </div>
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
@@ -76,6 +85,7 @@
                     </button>
                 </div>
             </div>
+            
         </form>
     </div>
 
