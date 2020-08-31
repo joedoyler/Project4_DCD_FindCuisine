@@ -1,4 +1,4 @@
-# SiMem
+# Find Cuisine
 
 Find Cuisine is a directory of recipes made by its users for its users. The aim is to bring a restaurant experience into the households via the sharing of different some of the best meals are users have ever made. 
 The user is provided with all the facilities to set themselves up and including visual aids to go along with their recipes to entice users on what they could be making with images of mouth watering meals.
@@ -129,6 +129,15 @@ When the user edits a recipe it comes up as a new recipe and they are forced to 
 
 Odd popout feature occurs for a split second when a recipe is deleted.
 
+# Version Control
+
+## Gitpod 
+Gitpod was chosen for the version control of the project from the very beginning. 
+
+## GitHub
+
+GitHub was used as a repository for everything pushed from Gitpod.
+
 # Deployment
 
 ## Gitpod 
@@ -145,12 +154,27 @@ After each main section of the project was completed a commit and push was used 
 
 GitHub Pages was used to deploy the site. Upon selecting a name for the project, "Settings" was selected. Then proceeded to the "GitHub Pages" section where the "Source" was switched to "Master branch". At the top of the page a link is then found to the deployed website where it is submitted during the project submission section for grading.
 
+## Heroku 
+
+To deploy my project to Heroku the following steps were followed:
+
+* Go to the "settings" page in heroku app
+* To set up heroku config vars from Gitpod to Heroku, scroll down  and click on "Reveal Config Vars" section:
+* Type in "IP" to KEY and "0.0.0.0" to value 
+* Type in "PORT" to KEY and "5000" to value 
+* Type in "MONGO_URI" to KEY and "mongodb+srv://joeDoyler:<password>@myfirstcluster-y6kfn.mongodb.net/recipe_database?retryWrites=true&w=majority" to value 
+* Type in "SECRET_KEY" to KEY and "<secret_key>" to value 
+
 
 # Hosting
 
 ## Heroku 
 
 Heroku has been chosen to host the app for this project.
+
+# GitHub repository link
+
+https://github.com/joedoyler/Project4_DCD_FindCuisine
 
 
 # Credits 
