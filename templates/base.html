@@ -23,7 +23,8 @@
         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
         <li><a href="{{ url_for('login') }}"> Log In </a></li>
         <li><a href="{{ url_for('register') }}">Register</a></li>
-        <li><a href="#">Log Out</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}">Log Out</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}"> <i class="far fa-user-circle"></i> </a></li>
       </ul>
     </div>
   </nav>
@@ -33,7 +34,8 @@
         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
         <li><a href="{{ url_for('login') }}"> Log In </a></li>
         <li><a href="{{ url_for('register') }}">Register</a></li>
-        <li><a href="#">Log Out</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}">Log Out</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}"> <i class="far fa-user-circle"></i></a></li>
   </ul>
 </header> 
 
