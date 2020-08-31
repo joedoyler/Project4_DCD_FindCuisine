@@ -11,9 +11,13 @@
 				<div class="input-field col s12">
                     <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
 					<select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled selected>Choose Category</option>
+                        <option value="" disabled>Choose Category</option>
                         {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% if category.category_name == recipe.category_name %}
+                                <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                            {% else %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
 					<label for="category_name">recipe Category</label>
@@ -24,8 +28,8 @@
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
                     <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
-                        type="text" class="validate" required>
-                    <label for="recipe_name">recipe Name</label>
+                        value="{{ recipe.recipe_name }}" type="text" class="validate" required>
+                    <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
             <!-- recipe description -->
@@ -33,16 +37,18 @@
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
                     <textarea id="recipe_description" name="recipe_description" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="recipe_description">Recipe Description - Highlight allergens at bottom of description</label>
+                        maxlength="200" class="materialize-textarea validate" required>
+                        {{- recipe.recipe_description -}}
+                    </textarea>
+                    <label for="recipe_description">Recipe Description</label>
                 </div>
             </div>
             <!-- recipe ingredients-->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-list-ul prefix light-blue-text text-darken-4"></i>
-                    <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
+                     <input id="recipe_ingredients" name="recipe_ingredients" minlength="5" maxlength="50"
+                        value="{{ recipe.recipe_ingredients }}" type="text" class="validate" required>
                     <label for="recipe_ingredients">Recipe Ingredients</label>
                 </div>
             </div>
@@ -50,9 +56,9 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-stopwatch prefix light-blue-text text-darken-4"></i>
-                    <input id="recipe_time" name="recipe_time" minlength="1" maxlength="50"
-                        type="text" class="validate" required>
-                    <label for="recipe_time">Prep Time</label>
+                     <input id="recipe_time" name="recipe_time" minlength="1" maxlength="50"
+                        value="{{ recipe.recipe_time }}" type="text" class="validate" required>
+                    <label for="recipe_time">Recipe Prep Time</label>
                 </div>
             </div>
             <!-- Allergens Toggle -->
@@ -61,10 +67,12 @@
 					<div class="switch">
                         <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
 						<label for="recipe_allergy">
-                            <input type="checkbox" id="recipe_allergy" name="recipe_allergy">
+                            {% if recipe.recipe_allergy == "on" %}
+                                <input type="checkbox" id="recipe_allergy" name="recipe_allergy" checked>
+                            {% else %}
+                                <input type="checkbox" id="recipe_allergy" name="recipe_allergy">
+                            {% endif %}
                             <span class="lever"></span>
-                            Contains Allergens
-                        </label>
 					</div>
 				</div>
             </div>
@@ -72,9 +80,9 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-image prefix light-blue-text text-darken-4"></i>
-                    <input id="recipe_image" name="recipe_image"
-                        type="text" class="validate" required>
-                    <label for="recipe_image">Link To Image Of Recipe </label>
+                    <input id="recipe_image" name="recipe_image" minlength="5" maxlength="50"
+                        value="{{ recipe.recipe_image }}" type="text" class="validate" required>
+                    <label for="recipe_image">Link To Image</label>
                 </div>
             </div>
             <!-- submit button -->
