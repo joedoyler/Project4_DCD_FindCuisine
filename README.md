@@ -172,6 +172,8 @@ To deploy my project to Heroku the following steps were followed:
 
 Heroku has been chosen to host the app for this project.
 
+https://project-4-dcd-find-cuisine.herokuapp.com
+
 # GitHub repository link
 
 https://github.com/joedoyler/Project4_DCD_FindCuisine
